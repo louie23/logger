@@ -423,7 +423,7 @@ sub Channel_open_logs ($) {
   my $uri=$self->{URI};
   my $channel_name=$uri->channel;
 
-  my @tm = gmtime;
+  my @tm = localtime;
   $tm[5]+= 1900; $tm[4]++;
   my $date = sprintf("%04d-%02d-%02d", $tm[5], $tm[4], $tm[3]);
 
@@ -589,7 +589,7 @@ sub log_event ($$$;$) {
 
   return if !$channel->{Listening};
 
-  my @tm = gmtime($t);
+  my @tm = localtime($t);
   $tm[5]+= 1900; $tm[4]++;
   my $date = sprintf("%04d-%02d-%02d", $tm[5], $tm[4], $tm[3]);
   my $time = sprintf("%02d:%02d:%02d", $tm[2], $tm[1], $tm[0]);
@@ -681,7 +681,7 @@ sub log_admin_event ($$$;$) {
   my($self, $event, $t, $msg)=@_;
   my $nick=$event ? $event->nick : '';
 
-  my @tm = gmtime($t);
+  my @tm = localtime($t);
   $tm[5]+= 1900; $tm[4]++;
   my $date = sprintf("%04d-%02d-%02d", $tm[5], $tm[4], $tm[3]);
   my $time = sprintf("%02d:%02d:%02d", $tm[2], $tm[1], $tm[0]);
@@ -987,29 +987,29 @@ sub command_for_me ($$$$$) {
     }
   }
   
-  if($command=~ /^(?:be quiet|shut up|silence|sshush|stop|off|nolisten)/i) {
-    if($channel->{Listening}) {
-      $self->me($event->to, 'is not logging');
-      # Log who turned me off
-      log_admin_event($self, $event, time, "Logging turned off");
-      $channel->{Listening}=0;
-    } else {
-      $self->me($event->to, 'is already not logging');
-    }
-    return;
-  }
-  
-  if($command=~ /^(?:hello|log|listen|record|start|begin|on|listen)/i) {
-    if(!$channel->{Listening}) {
-      $self->me($event->to, 'is logging');
-      # Log who turned me on
-      log_admin_event($self, $event, time, "Logging turned on");
-      $channel->{Listening}=1;
-    } else {
-      $self->me($event->to, 'is already logging');
-    }
-    return;
-  }
+#  if($command=~ /^(?:be quiet|shut up|silence|sshush|stop|off|nolisten)/i) {
+#    if($channel->{Listening}) {
+#      $self->me($event->to, 'is not logging');
+#      # Log who turned me off
+#      log_admin_event($self, $event, time, "Logging turned off");
+#      $channel->{Listening}=0;
+#    } else {
+#      $self->me($event->to, 'is already not logging');
+#    }
+#    return;
+#  }
+#  
+#  if($command=~ /^(?:hello|log|listen|record|start|begin|on|listen)/i) {
+#    if(!$channel->{Listening}) {
+#      $self->me($event->to, 'is logging');
+#      # Log who turned me on
+#      log_admin_event($self, $event, time, "Logging turned on");
+#      $channel->{Listening}=1;
+#    } else {
+#      $self->me($event->to, 'is already logging');
+#    }
+#    return;
+#  }
 
   if($command=~ /^(?:sync)/i) {
     Channel_close_logs($channel);
@@ -1070,8 +1070,8 @@ sub command_for_me ($$$$$) {
   if($command=~ /^help/i) {
     my(@help)=(
       "The commands I know are:",
-      " silence      - Stop logging (also: stop, off, ...)",
-      " listen       - Start logging (also: start, on, ...)",
+#     " silence      - Stop logging (also: stop, off, ...)",
+#     " listen       - Start logging (also: start, on, ...)",
       " bookmark     - Give the URI of the current log",
       " chump LETTER - Record the URI of the current log under chump LETTER",
       "I respond to '$::Nick, command' in public and '/msg $::Nick command' in private",

@@ -40,17 +40,17 @@ my $home='/wherever/logger';
 
 # Where the logger output lives - in subdirectories by channel name below
 # this directory
-my $logs="/wherever/logs";
+my $logs="/home/tcffm/logger/bin/logs/irc.freenode.net\:6667";
 
 my $live="$home/logs";
 
 # Where the XSLT sheets live
-my $xslt="/wherever/xslt";
+my $xslt="/home/tcffm/logger/xslt";
 
 # Channels being logged potentially
-my(@potential_channels)=qw(channel1 channel2);
+my(@potential_channels)=qw(tcffm channel2);
 # Channels always being logged
-my(@always_live_channels)=qw(channel1);
+my(@always_live_channels)=qw(tcffm);
 
 # Debug?
 my $debugging=0;
@@ -71,10 +71,10 @@ my(%always_live)=map {$_ => 1} @always_live_channels;
 # BUG: blurb isn't used/working in the XSLT sheets, just set to ''
 # and it is hard-coded per channel in the XSLT.
 my(%channel_params)=(
-   channel1 => [ title => 'My Channel', 
+   tcffm => [ title => 'My Channel', 
                 url=> "http://example.org/mychannel/home/",
                 blurb => qq{},
-		ircserver => 'irc.example.org',
+		ircserver => 'irc.freenode.net',
               ],
 
    channel2 => [ title => 'My Other Channel', 

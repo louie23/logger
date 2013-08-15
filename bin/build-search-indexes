@@ -36,10 +36,10 @@
 use warnings;
 use strict;
 
-my $home='/wherever';
+my $home='/var/www/irclog';
 my $logs="$home/chat-logs";
 my $indexes="$home/indexes";
-my $root="$logs/servers";
+my $root="$home";
 
 $ENV{PATH}='/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin';
 $ENV{TZ}='UTC';

@@ -212,7 +212,7 @@ $query->param('case', $case) if $case;
 # use q->url() to get URL of this script without any query parameters
 # since we are using a POST here and don't want them added to the
 # submission URL.
-my $action_url="/cgi-bin/search.pl";
+my $action_url="/cgi-bin/search";
 
 print $query->start_form(-name => 'f', -method=>'GET', -action => $action_url),"\n";
 

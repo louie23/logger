@@ -74,7 +74,7 @@ for the collaboratively written weblog and
 (<a href="latest">Latest</a>)
 </xsl:when>
 </xsl:choose>
-(<a href="../search?channel={$ircchannel}">Search</a>)
+(<a href="/cgi-bin/search?channel={$ircchannel}">Search</a>)
 </p>
 
 <ul>

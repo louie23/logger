@@ -42,14 +42,14 @@ delete $ENV{'BASH_ENV'};
 use CGI;
 
 # Configuration
-my $home='/wherever';
-my $logs="$home/chat-logs";
+my $home='/var/www/irclog';
+my $logs="$home/tcffm";
 my $indexes="$home/indexes";
 my $root="$logs/servers";
-my $base_uri='http://www.ilrt.bris.ac.uk/discovery/chatlogs/';
+my $base_uri='https://tcffm.rr.nu:4443/irclog/';
 my $default_count=10;
 
-my(@channels)=qw(your-channels-here);
+my(@channels)=qw(tcffm);
 
 ######################################################################
 # Subroutines
@@ -212,7 +212,7 @@ $query->param('case', $case) if $case;
 # use q->url() to get URL of this script without any query parameters
 # since we are using a POST here and don't want them added to the
 # submission URL.
-my $action_url="/discovery/chatlogs/search";
+my $action_url="/cgi-bin/search.pl";
 
 print $query->start_form(-name => 'f', -method=>'GET', -action => $action_url),"\n";
 

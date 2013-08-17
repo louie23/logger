@@ -48,9 +48,9 @@ my $live="$home/logs";
 my $xslt="/home/tcffm/logger/xslt";
 
 # Channels being logged potentially
-my(@potential_channels)=qw(tcffm channel2);
+my(@potential_channels)=qw(channel1 channel2);
 # Channels always being logged
-my(@always_live_channels)=qw(tcffm);
+my(@always_live_channels)=qw(channel1);
 
 # Debug?
 my $debugging=0;
@@ -71,7 +71,7 @@ my(%always_live)=map {$_ => 1} @always_live_channels;
 # BUG: blurb isn't used/working in the XSLT sheets, just set to ''
 # and it is hard-coded per channel in the XSLT.
 my(%channel_params)=(
-   tcffm => [ title => 'My Channel', 
+   channel1 => [ title => 'My Channel', 
                 url=> "http://example.org/mychannel/home/",
                 blurb => qq{},
 		ircserver => 'irc.freenode.net',

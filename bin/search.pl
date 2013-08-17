@@ -35,7 +35,7 @@ $ENV{'Content-Length'}||=0;
 
 # Tainting, dontcha know
 $ENV{'PATH'}="/bin:/usr/bin:/usr/local/bin";
-$ENV{TZ}='UTC';
+$ENV{TZ}='Asia/Taipei';
 delete $ENV{'BASH_ENV'};
 
 # Standard perl modules
@@ -253,7 +253,7 @@ EOT
 ######################################################################
 
 
-my(@t)=reverse ((gmtime(time))[3..5]);
+my(@t)=reverse ((localtime(time))[3..5]);
 $t[0]+=1900; $t[1]++;
 my $today=sprintf("%04d-%02d-%02d", @t);
 

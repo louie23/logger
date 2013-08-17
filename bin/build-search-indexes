@@ -42,7 +42,7 @@ my $indexes="$home/indexes";
 my $root="$home";
 
 $ENV{PATH}='/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin';
-$ENV{TZ}='UTC';
+$ENV{TZ}='Asia/Taipei';
 $ENV{BASH_ENV}='';
 
 my(@potential_channels)=qw(your-channels-here);
@@ -72,7 +72,7 @@ if(@ARGV) {
 }
 
 
-my(@t)=reverse ((gmtime(time))[3..5]);
+my(@t)=reverse ((localtime(time))[3..5]);
 $t[0]+=1900; $t[1]++;
 my $today=sprintf("%04d-%02d-%02d", @t);
 

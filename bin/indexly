@@ -62,7 +62,7 @@ my $index_all=0;
 
 
 $ENV{PATH}='/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin';
-$ENV{TZ}='UTC';
+$ENV{TZ}='Asia/Taipei';
 $ENV{BASH_ENV}='';
 
 my(%always_live)=map {$_ => 1} @always_live_channels;
@@ -138,7 +138,7 @@ for my $channel (@channels) {
     my(%seen);
     my $now=time;
     for my $time ($now, $now-86400) {
-      my(@t)=reverse ((gmtime($time))[3..5]);
+      my(@t)=reverse ((localtime($time))[3..5]);
       $t[0]+=1900; $t[1]++;
       my $date=sprintf("%04d-%02d-%02d", @t);
       my $ym=sprintf("%04d-%02d", $t[0], $t[1]);

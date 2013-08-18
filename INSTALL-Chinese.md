@@ -86,7 +86,7 @@ $ /home/tcffm/logger/bin/indexly --all
 
 建立年份及月份的索引頁面：（放在 cron 每5分鐘跑一次):
 
-$ /home/tcffm/logger/bin/rebuild-indexes /var/www/irclog/tcffm/ https://tcffm.rr.nu:4443/irclog/tcffm
+$ /home/tcffm/logger/bin/rebuild-indexes /var/www/irclog/tcffm/ http://your.site/irclog/tcffm
 
 
 建立搜尋索引: (建立好的索引提供 search.pl 使用，放在 cron 每天跑一次）
@@ -109,7 +109,7 @@ $ sudo cp -p search.pl /usr/lib/cgi-bin/search
 
 可以開啟瀏覽器來測試搜尋功能：
 
-$ firefox https://your.site/cgi-bin/search
+$ firefox http://your.site/cgi-bin/search
 
 
 
@@ -123,6 +123,6 @@ $ sudo vi /etc/cron.d/logger
 
 6 0 * * *      tcffm    /home/tcffm/logger/bin/build-search-indexes tcffm
 
-*/5 0 * * *      tcffm    /home/tcffm/logger/bin/rebuild-indexes /var/www/irclog/tcffm/ https://tcffm.rr.nu:4443/irclog/tcffm 2> /home/tcffm/logs/rebuild-index.cron.log
+*/5 0 * * *      tcffm    /home/tcffm/logger/bin/rebuild-indexes /var/www/irclog/tcffm/ http://your.site/irclog/tcffm 2> /home/tcffm/logs/rebuild-index.cron.log
 
 */5 * * * *      tcffm    /home/tcffm/start-link-latest-html

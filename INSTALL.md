@@ -84,7 +84,7 @@ $ /home/tcffm/logger/bin/indexly --all
 
 rebuild year and month page index:
 
-$ /home/tcffm/logger/bin/rebuild-indexes /var/www/irclog/tcffm/ https://tcffm.rr.nu:4443/irclog/tcffm
+$ /home/tcffm/logger/bin/rebuild-indexes /var/www/irclog/tcffm/ http://your.site/irclog/tcffm
 
 
 build search indexes: (for search.pl searching keyword, in cron once a day):
@@ -108,7 +108,7 @@ $ sudo cp -p search.pl /usr/lib/cgi-bin/search
 
 you can test with url:
 
-$ firefox https://your.site/cgi-bin/search
+$ firefox http://your.site/cgi-bin/search
 
 
 
@@ -122,6 +122,6 @@ $ sudo vi /etc/cron.d/logger
 
 6 0 * * *      tcffm    /home/tcffm/logger/bin/build-search-indexes tcffm
 
-*/5 0 * * *      tcffm    /home/tcffm/logger/bin/rebuild-indexes /var/www/irclog/tcffm/ https://tcffm.rr.nu:4443/irclog/tcffm 2> /home/tcffm/logs/rebuild-index.cron.log
+*/5 0 * * *      tcffm    /home/tcffm/logger/bin/rebuild-indexes /var/www/irclog/tcffm/ http://your.site/irclog/tcffm 2> /home/tcffm/logs/rebuild-index.cron.log
 
 */5 * * * *      tcffm    /home/tcffm/start-link-latest-html

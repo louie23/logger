@@ -71,8 +71,8 @@ my(%always_live)=map {$_ => 1} @always_live_channels;
 # BUG: blurb isn't used/working in the XSLT sheets, just set to ''
 # and it is hard-coded per channel in the XSLT.
 my(%channel_params)=(
-   tcffm => [ title => 'My Channel', 
-                url=> "http://example.org/mychannel/home/",
+   tcffm => [ title => 'TCFFM forum', 
+                url=> "http://bit.ly/tcffm-forum",
                 blurb => qq{},
 		ircserver => 'irc.freenode.net',
               ],

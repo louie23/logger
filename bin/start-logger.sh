@@ -22,7 +22,7 @@ baseDir=/home/tcffm/logger
 botName=tcffm_logger_bot
 admin_password=change-to-your-admin-password
 channel-URI=irc://irc.freenode.net/tcffm
-channel-title="台中自由軟體聚會"
+channel-title="TCFFM"
 logDir=$baseDir/logs/
 log-URI=https://tcffm.rr.nu:4443/irclog/tcffm/
 

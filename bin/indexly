@@ -40,7 +40,7 @@ my $home='/wherever/logger';
 
 # Where the logger output lives - in subdirectories by channel name below
 # this directory
-my $logs="/home/tcffm/logger/logs/irc.freenode.net\:6667";
+my $logs="/var/www/irclog";
 
 my $live="$home/logs";
 

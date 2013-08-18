@@ -18,17 +18,17 @@
 #
 # See http://www.gnu.org/copyleft/gpl.html
 
-baseDir=/home/tcffm/logger
+binary=/home/tcffm/logger/bin/logger
 botName=tcffm_logger_bot
 admin_password=change-to-your-admin-password
 channel_URI=irc://irc.freenode.net/tcffm
 channel_title="TCFFM"
-logDir=$baseDir/logs/
+logDir=/home/tcffm/logs/
 log_URI=https://tcffm.rr.nu:4443/irclog/tcffm/
 
 start() {
 	mkdir -p $logDir
-	$baseDir/bin/logger -html --nick $botName $admin_password $channel_URI $channel_title $logDir $log_URI > $logDir/logger-out.log 2> $logDir/logger-err.log &
+	$binary -html --nick $botName $admin_password $channel_URI $channel_title $logDir $log_URI > $logDir/logger-out.log 2> $logDir/logger-err.log &
 }
 
 stop() {

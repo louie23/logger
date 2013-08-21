@@ -24,7 +24,7 @@ admin_password=change-to-your-admin-password
 channel_URI=irc://irc.freenode.net/tcffm
 channel_title="TCFFM"
 logDir=/home/tcffm/logs/
-log_URI=https://tcffm.rr.nu:4443/irclog/tcffm/
+log_URI=http://tcffm.rr.nu:8080/irclog/tcffm/
 
 start() {
 	mkdir -p $logDir

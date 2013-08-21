@@ -46,7 +46,7 @@ my $home='/var/www/irclog';
 my $logs="$home/tcffm";
 my $indexes="$home/indexes";
 my $root="$logs/servers";
-my $base_uri='https://tcffm.rr.nu:4443/irclog/';
+my $base_uri='http://tcffm.rr.nu:8080/irclog/';
 my $default_count=10;
 
 my(@channels)=qw(tcffm);
